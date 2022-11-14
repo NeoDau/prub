@@ -3,17 +3,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *
- *
+ *get_funct - function print character
+ *@formatic: type format
+ *Return: pointer to function
  */
 int (*get_funct(char formatic))(va_list)
 {
 	type_ch str[] = {
 		{'c', c_formatic},
 		{'s', s_formatic},
-	/**	{'d', d_formatic},
-		{'i', i_formatic},*/
-		{'%', porcent_formatic},
+		{'d', d_formatic},
+		{'i', i_formatic},
+	/**	{'%', porcent_formatic},*/
 		{'\0', NULL},
 	};
 
@@ -29,8 +30,9 @@ int (*get_funct(char formatic))(va_list)
 	return (NULL);
 }
 /**
- *
- *
+ *_printf - print format according
+ *format: list argument  to print
+ *Return: mimic printf function
  */
 int _printf(const char *format, ...)
 {
@@ -59,7 +61,7 @@ int _printf(const char *format, ...)
 		f = *get_funct(format[i + 1]);
 		if (f != NULL)
 		{
-			numChar += f(arg);
+			numChar += f(arg), i += 1;
 			continue;
 		}
 		if (format[i] == '\0')
