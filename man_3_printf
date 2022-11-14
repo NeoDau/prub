@@ -13,12 +13,7 @@
        %c ‐ character
        %d ‐ decimal
        %i ‐ integer
-       %o ‐ unsigned octal integer
-       %p ‐ pointer type
        %s ‐ string
-       %u ‐ unsigned decimal integer
-       %x ‐ unsigned hex integer
-       %X ‐ unsigned hex integer
        % ‐ print %
 
 #SEE ALSO
