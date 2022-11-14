@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int (*f)(va_list);
 
-	if (format == NULL)
+	if (!format)
 	{
 		return (-1);
 	}
@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 			return (numChar);
 		}
 		f = *get_funct(format[i + 1]);
-		if (f != NULL)
+		if (!f)
 		{
 			numChar += f(arg), i += 1;
 			continue;
